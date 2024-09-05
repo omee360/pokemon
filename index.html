@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Search App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="appContainer">
+        <h1>Pokémon Search App</h1>
+        <div id="innerContainer">
+            <h2>Search for Pokémon Name or ID:</h2>
+            <form action="" role="search" id="searchForm">
+                <input type="text" id="search-input" placeholder="Name">
+                <button type="submit" id="search-button">Search</button>
+            </form>
+            <div id="results">
+                <h3 id="pokemon-name">PIKACHU<small id="pokemon-id">#25</small></h3>
+                <p>Weight: <span id="weight">60</span> Height: <span id="height">4</span></p>
+                <div id="imgContainer"><img src="https://place-hold.it/100" alt="" id="sprite"></div>
+                <h4 id="types" class="type">Electric</h4>
+                <div id="statsContainer">
+                    <ul>
+                        <li><strong>Base</strong></li>
+                        <li><strong>Stats</strong></li>
+                    </ul>
+                    <ul>
+                        <li>HP</li>
+                        <li id="hp">35</li>
+                    </ul>
+                    <ul>
+                        <li>Attack</li>
+                        <li id="attack">55</li>
+                    </ul>
+                    <ul>
+                        <li>Defense</li>
+                        <li id="defense">40</li>
+                    </ul>
+                    <ul>
+                        <li>Special Attack</li>
+                        <li id="special-attack">50</li>
+                    </ul>
+                    <ul>
+                        <li>Special Defense</li>
+                        <li id="special-defense">50</li>
+                    </ul>
+                    <ul>
+                        <li>Speed</li>
+                        <li id="speed">90</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
