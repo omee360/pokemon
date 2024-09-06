@@ -74,7 +74,7 @@ const displayData = data => {
   weight.textContent = data.weight;
   height.textContent = data.height;
   sprite.src = data.sprites.front_default;
-  types.textContent = data.types[0].type.name;
+  types.textContent = data.types.map(el => console.log(el.name));
   types.classList.add(data.types[0].type.name);
   hp.textContent = data.stats[0].base_stat;
   attack.textContent = data.stats[1].base_stat;
@@ -82,6 +82,21 @@ const displayData = data => {
   specialAttack.textContent = data.stats[3].base_stat;
   specialDefense.textContent = data.stats[4].base_stat;
   speed.textContent = data.stats[5].base_stat;
+}
+
+const reset = () => {
+  pokemonName.textContent = "";
+  pokemonId.textContent = "";
+  weight.textContent = "";
+  height.textContent = "";
+  sprite.src = "https://place-hold.it/100";
+  types.textContent = "";
+  hp.textContent = "";
+  attack.textContent = "";
+  defense.textContent = "";
+  specialAttack.textContent = "";
+  specialDefense.textContent = "";
+  speed.textContent = "";
 }
 
 // Main function to get Pokemon details
@@ -104,4 +119,6 @@ searchButton.addEventListener("click", e => {
   if(isInputValid(searchInput.value)) {
     fetchData(searchInput.value.trim().toLowerCase());
   }
+  searchInput.value = "";
+  reset();
 });
