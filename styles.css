@@ -5,36 +5,116 @@ body {
   text-align: center;
   font-size: 16px;
   line-height: 1.5;
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
 }
 h1 {
   font-size: 2.75rem;
-  line-height: 1.2;
+  line-height: 1.2; margin: 0;
 }
 
 #appContainer {
-    width: 768px; max-width: 100%; margin: 0 auto; background-color: #abaabb; padding: 20px;
+    width: 100%; padding: 20px; display: flex; justify-content: center; align-items: center; flex-direction: column;
 }
-
+#innerContainer, #appContainer h1 {
+    width: 768px; max-width: 100%; padding: 20px;
+}
+#innerContainer {background-color: #F3F4F6;}
 h2 {
   font-size: 1.5rem;
   line-height: 1.3;
 }
+
+/* General form styling */
+#searchForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #F3F4F6; /* Light background for the form */
+    border-radius: 8px;        /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    max-width: 400px;          /* Width for the form */
+}
+
+/* Styling for the input */
+#search-input {
+    width: 100%;               /* Take full available width */
+    padding: 10px 15px;        /* Spacious padding */
+    border: 2px solid #CBD5E0; /* Light border */
+    border-radius: 4px 0 0 4px;/* Rounded corners on the left */
+    font-size: 16px;           /* Readable text size */
+    background-color: white;   /* Clean white background */
+    color: #2D3748;            /* Dark text */
+    outline: none;             /* Remove default outline */
+    transition: border-color 0.3s ease; /* Smooth transition on focus */
+}
+
+#search-input:focus {
+    border-color: #3B82F6;     /* Blue border on focus */
+}
+
+/* Styling for the button */
+#search-button {
+    padding: 10px 20px;        /* Comfortable padding */
+    background-color: #3B82F6; /* Primary blue color */
+    color: white;              /* White text for contrast */
+    border: none;              /* Remove default border */
+    border-radius: 0 4px 4px 0;/* Rounded corners on the right */
+    font-size: 16px;           /* Match the input font-size */
+    cursor: pointer;           /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth hover transition */
+}
+
+#search-button:hover {
+    background-color: #2563EB; /* Slightly darker blue on hover */
+}
+
+#search-button:active {
+    background-color: #1D4ED8; /* Even darker blue on click */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+    #searchForm {
+        flex-direction: column;
+        max-width: 100%;      /* Full width on small screens */
+    }
+
+    #search-input {
+        width: 100%;          /* Full width input on mobile */
+        border-radius: 4px;   /* Rounded corners on mobile */
+        margin-bottom: 10px;  /* Add space between input and button */
+    }
+
+    #search-button {
+        width: 100%;          /* Full width button on mobile */
+        border-radius: 4px;   /* Rounded corners on mobile */
+    }
+}
+
+
 h3 {
   text-transform: uppercase;
   font-size: 1.3rem;
-  line-height: 1.3;
+  line-height: 1.3; margin: 0;
 }
 h4 {
   font-size: 1.1rem;
   line-height: 1.3;
 }
+h5 {
+    font-size: 1.1rem; line-height: 1.3; margin: 0;
+}
+.pokemonName {display: flex; gap: 10px; justify-content: center; align-items: center; margin: 10px 0;}
 ul {
     list-style: none;
-    margin: 10px 0;
+    margin: 10px 0; padding: 0; display: flex; gap: 5px;
 }
-ul li {background: sienna; color: #ffffff;}
+ul li {background: #2D3748; color: #ffffff; flex: 50%; padding: 10px;}
 /* Special styling for Pokémon types */
-
+.type {display: inline-block; background: #3B82F6; padding: 10px 10px 5px; margin: 20px 0; text-transform: uppercase;}
 .normal {
   background-color: #b7b7aa;
 }
