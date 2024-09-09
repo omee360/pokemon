@@ -68,14 +68,15 @@ const fetchPokemon = async (url) => {
 }
 
 const displayData = data => {
-  console.log(data);
+  console.log(data.types);
   pokemonName.textContent = data.name;
   pokemonId.textContent = `#${data.id}`;
   weight.textContent = data.weight;
   height.textContent = data.height;
   sprite.src = data.sprites.front_default;
-  types.textContent = data.types.map(el => console.log(el.name));
-  types.classList.add(data.types[0].type.name);
+  types.innerHTML += data.types.map(el => {
+    return `<span class="${el.type.name}">${el.type.name}</span>`
+  }).join("");
   hp.textContent = data.stats[0].base_stat;
   attack.textContent = data.stats[1].base_stat;
   defense.textContent = data.stats[2].base_stat;
